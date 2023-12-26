@@ -2,6 +2,8 @@ package com.bengisusahin.coroutinesk
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -39,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         println("run blocking end")
 */
 
+        /*
         //Global Scope
         println("Global Scope start")
         GlobalScope.launch {
@@ -47,6 +50,17 @@ class MainActivity : AppCompatActivity() {
 
         }
         println("Global Scope end")
+        */
+
+        //CoroutineScope
+        //Context hangi verilerle çalışcağını söylüyor
+        println("coroutine scope start")
+        CoroutineScope(Dispatchers.Default ).launch {
+            delay(5000)
+            println("coroutine scope")
+        }
+        println("coroutine scope end")
+
 
     }
 }
